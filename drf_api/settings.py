@@ -44,6 +44,7 @@ ALLOWED_HOSTS = []
 cloudinary_storage
 cloudinary
 profiles
+rest_framework
 '''
 
 INSTALLED_APPS = [
@@ -55,6 +56,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
+    'rest_framework',
 
     'profiles',
 ]

@@ -21,6 +21,7 @@ django-allauth==0.58.2
 django-cloudinary-storage==0.3.0
 django-crispy-forms==1.14.0
 django-summernote==0.8.20.0
+djangorestframework==3.14.0
 executing==1.2.0
 Flask==3.0.0
 flask-validators==1.0
