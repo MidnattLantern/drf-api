@@ -2,6 +2,9 @@ superuser for dev:
 username: stunning_moments_superuser
 password: stunningpass3
 
+username: cloudy_pilot_user
+password: cloudypass3
+
 Default images for profile picture and images are provided by Code Institute.
 Every image in this API are hosted and stored using Cloudinary, and Pillow
 
