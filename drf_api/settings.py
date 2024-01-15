@@ -45,6 +45,7 @@ cloudinary_storage
 cloudinary
 profiles
 rest_framework
+comments
 '''
 
 INSTALLED_APPS = [
@@ -60,6 +61,7 @@ INSTALLED_APPS = [
 
     'profiles',
     'posts',
+    'comments',
 ]
 
 MIDDLEWARE = [
