@@ -8,6 +8,9 @@ password: cloudypass3
 username: isabella
 password: isapass3
 
+username: isabella2
+password: isapass32
+
 Default images for profile picture and images are provided by Code Institute.
 Every image in this API are hosted and stored using Cloudinary, and Pillow
 

@@ -12,12 +12,18 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+os.environ['CLOUDINARY_URL'] = "cloudinary://468475887688825:Za_vdNk5un9LJ7KRCjxhSKG7bJg@dwoy8bcwq"
+os.environ['SECRET_KEY'] = "mbti_api_lib"
+os.environ['DEV'] = '1'
+os.environ['DATABASE_URL'] = "postgres://pokglkgl:h-nB-LYrXUzqFqAGGbyW5orZ7mpvf5qI@snuffleupagus.db.elephantsql.com/pokglkgl"
+
+import dj_database_url
 
 if os.path.exists('env.py'):
     import env
 
 CLOUDINARY_STORAGE = {
-    'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL')
+    'CLOUDINARY_URL': os.environ.get('cloudinary://468475887688825:Za_vdNk5un9LJ7KRCjxhSKG7bJg@dwoy8bcwq')
 }
 
 MEDIA_URL = '/media/'
@@ -142,12 +148,18 @@ WSGI_APPLICATION = 'drf_api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if 'DEV' in os.environ:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    }
+    print('connected')
 
 
 # Password validation
