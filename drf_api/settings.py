@@ -12,18 +12,13 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-os.environ['CLOUDINARY_URL'] = "cloudinary://468475887688825:Za_vdNk5un9LJ7KRCjxhSKG7bJg@dwoy8bcwq"
-os.environ['SECRET_KEY'] = "mbti_api_lib"
-os.environ['DEV'] = '1'
-os.environ['DATABASE_URL'] = "postgres://pokglkgl:h-nB-LYrXUzqFqAGGbyW5orZ7mpvf5qI@snuffleupagus.db.elephantsql.com/pokglkgl"
-
 import dj_database_url
 
 if os.path.exists('env.py'):
     import env
 
 CLOUDINARY_STORAGE = {
-    'CLOUDINARY_URL': os.environ.get('cloudinary://468475887688825:Za_vdNk5un9LJ7KRCjxhSKG7bJg@dwoy8bcwq')
+    'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL')
 }
 
 MEDIA_URL = '/media/'
