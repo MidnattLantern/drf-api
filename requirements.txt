@@ -15,14 +15,16 @@ decorator==5.1.1
 defusedxml==0.7.1
 dill==0.3.7
 dj-database-url==0.5.0
+dj-rest-auth==2.1.9
 dj3-cloudinary-storage==0.0.6
 Django==3.2
-django-allauth==0.58.2
+django-allauth==0.44.0
 django-cloudinary-storage==0.3.0
 django-crispy-forms==1.14.0
 django-filter==23.5
 django-summernote==0.8.20.0
 djangorestframework==3.14.0
+djangorestframework-simplejwt==5.3.1
 executing==1.2.0
 Flask==3.0.0
 flask-validators==1.0
