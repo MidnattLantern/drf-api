@@ -14,6 +14,9 @@ class Comment(models.Model):
     content = models.TextField()
 
     class Meta:
+        """
+        Obligatory docstring
+        """
         ordering = ['-created_at']
 
     def __str__(self):

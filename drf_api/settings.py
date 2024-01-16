@@ -46,6 +46,7 @@ profiles
 rest_framework
 comments
 likes
+followers
 '''
 
 INSTALLED_APPS = [
@@ -63,6 +64,7 @@ INSTALLED_APPS = [
     'posts',
     'comments',
     'likes',
+    'followers',
 ]
 
 MIDDLEWARE = [
