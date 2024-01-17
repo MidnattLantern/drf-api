@@ -67,7 +67,7 @@ DEBUG = True
 
 
 
-ALLOWED_HOSTS = ['localhost', 'https://drf-api-midnight-eee28e028309.herokuapp.com/', '127.0.0.1',]
+ALLOWED_HOSTS = ['localhost', 'drf-api-midnight-eee28e028309.herokuapp.com', '127.0.0.1',]
 
 
 ''' Added apps:
