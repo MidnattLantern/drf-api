@@ -63,7 +63,7 @@ SECRET_KEY = "somekey"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = 'DEV' in os.environ
-DEBUG = True
+DEBUG = False
 
 
 
