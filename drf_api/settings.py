@@ -68,7 +68,11 @@ DEBUG = 'DEV' in os.environ
 
 
 
-ALLOWED_HOSTS = ['localhost', os.environ.get('ALLOWED_HOST'), '127.0.0.1',]
+ALLOWED_HOSTS = [
+    os.environ.get('ALLOWED_HOST'),
+    'localhost',
+    '127.0.0.1',
+    ]
 
 
 ''' Added apps:
@@ -130,22 +134,23 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
-# gitpod
-#if 'CLIENT_ORIGIN_DEV' in os.environ:
-#    extracted_url = re.match(r'^.+-', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE).group(0)
-#    CORS_ALLOWED_ORIGIN_REGEXES = [
-#        rf"{extracted_url}(eu|us)\d+\w\.gitpod\.io$",
-#    ]
+# codeanywhere
+if 'CLIENT_ORIGIN_DEV' in os.environ:
+    extracted_url = re.match(r'^([^.]+)', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE).group(0)
 
-# not gitpod
-if 'CLIENT_ORIGIN' in os.environ:
-    CORS_ALLOWED_ORIGINS = [
-        os.environ.get('CLIENT_ORIGIN')
-    ]
-else:
     CORS_ALLOWED_ORIGIN_REGEXES = [
-        r"^https://.*\.gitpod\.io$"
+        rf"{extracted_url}.(eu|us)\d+\.codeanyapp\.com$",
     ]
+
+# not codeanywhere
+#if 'CLIENT_ORIGIN' in os.environ:
+#    CORS_ALLOWED_ORIGINS = [
+#        os.environ.get('CLIENT_ORIGIN')
+#    ]
+#else:
+#    CORS_ALLOWED_ORIGIN_REGEXES = [
+#        r"^https://.*\.gitpod\.io$"
+#    ]
 
 ROOT_URLCONF = 'drf_api.urls'
 

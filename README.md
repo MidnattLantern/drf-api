@@ -11,7 +11,11 @@ password: isapass3
 username: isabella2
 password: isapass32
 
+
 Elephant superuser:
+username: superusertest1
+password: ?
+
 username: testuser3
 password: testpass3
 
