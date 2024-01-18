@@ -29,7 +29,7 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATINO_CLASSES': [(
+    'DEFAULT_AUTHENTICATION_CLASSES': [(
         'rest_framework.authentication.SessionAuthentication'
         if 'DEV' in os.environ
         else 'dj_rest_auth.jtw_auth.JWTCookieAuthentication'
@@ -136,9 +136,12 @@ MIDDLEWARE = [
 ]
 
 # codeanywhere
+if 'CLIENT_ORIGIN' in os.environ:
+    CORS_ALLOWED_ORIGINS = [
+        os.environ.get('CLIENT_ORIGIN')
+    ]
 if 'CLIENT_ORIGIN_DEV' in os.environ:
     extracted_url = re.match(r'^([^.]+)', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE).group(0)
-
     CORS_ALLOWED_ORIGIN_REGEXES = [
         rf"{extracted_url}.(eu|us)\d+\.codeanyapp\.com$",
     ]
