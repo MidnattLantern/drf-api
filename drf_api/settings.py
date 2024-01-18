@@ -146,6 +146,8 @@ if 'CLIENT_ORIGIN_DEV' in os.environ:
         rf"{extracted_url}.(eu|us)\d+\.codeanyapp\.com$",
     ]
 
+CORS_ALLOW_CREDENTIALS = True
+
 # not codeanywhere
 #if 'CLIENT_ORIGIN' in os.environ:
 #    CORS_ALLOWED_ORIGINS = [
