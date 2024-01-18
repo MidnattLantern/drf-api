@@ -43,3 +43,6 @@ Whitenoise:
 During deployment for Heroku, the API may look differently. Although its function isn't lost, it may be nice to have the API look nice when you visit. Whitenoise attempt to fix that.
 whitnoise `pip3 install whitenoise`
 This API haven't yet successfully installed it. Here's a resource to resume that: https://www.w3schools.com/django/django_static_whitenoise.php
+
+In case of Bad request 400:
+ A common cause is disallowed host. Check if the deployed link is listed.
